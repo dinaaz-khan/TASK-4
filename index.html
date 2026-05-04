@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Quiz Header -->
+        <div class="quiz-header">
+            <h1>Quiz Master</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="question-count"><span id="currentQuestion">1</span> / <span id="totalQuestions">5</span></p>
+        </div>
+
+        <!-- Quiz Content -->
+        <div class="quiz-container">
+            <!-- Question Section -->
+            <div class="question-section">
+                <h2 id="questionText" class="question-text">Question text will appear here</h2>
+            </div>
+
+            <!-- Options Section -->
+            <div class="options-section" id="optionsContainer">
+                <!-- Options will be dynamically generated -->
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message"></div>
+
+            <!-- Buttons Section -->
+            <div class="buttons-section">
+                <button id="prevBtn" class="btn btn-secondary" onclick="previousQuestion()">← Previous</button>
+                <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Results Section (Hidden initially) -->
+        <div id="resultsSection" class="results-section hidden">
+            <div class="results-card">
+                <h2>Quiz Completed!</h2>
+                <div class="score-display">
+                    <p class="score-text">Your Score</p>
+                    <p class="score-value"><span id="finalScore">0</span> / <span id="maxScore">5</span></p>
+                    <p class="score-percentage" id="scorePercentage">0%</p>
+                </div>
+                <div class="score-feedback" id="scoreFeedback"></div>
+                <button class="btn btn-primary" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
